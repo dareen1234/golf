@@ -1,0 +1,396 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Fustat:wght@200..800&display=swap');
+* {
+    margin: 0;      
+    padding: 0;     
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Amiri', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+    direction: rtl;
+}
+
+
+header {
+    background:#717d7e;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+}
+
+.package, .facility {
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #717d7e;
+    color: white;
+}
+.img {
+    width: 100%;
+    height: 40%;
+    margin: 0;
+}
+#videoContainer {
+    background-color: rgba(0, 0, 0, 0.8); /* خلفية داكنة */
+    padding: 20px;
+    border-radius: 10px;
+}
+h2{
+    text-align: center;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.gallery img {
+    width: 30%; /* عرض الصورة 30% */
+    margin-bottom: 10px; /* مسافة بين الصور */
+    border-radius: 8px; /* زوايا دائرية */
+}
+
+/* تنسيق قسم الصور */
+#imageGallery {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 20px;
+   margin-top: 20px;
+}
+#imageGallery img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.log{
+    width: 10%;
+    height: 10%;
+    border-radius: 5px;
+}
+/* General Styles */
+
+/* Header */
+header {
+    background-color: #004d00;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.log {
+    width: 80px;
+    height: auto;
+    margin-top: 10px;
+}
+
+/* Navigation Bar */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #008000;
+    overflow: hidden;
+}
+
+nav ul li {
+    display: inline;
+    padding: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 12px 20px;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background-color: #006400;
+    border-radius: 5px;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+main h2 {
+    color: #004d00;
+    font-size: 24px;
+}
+
+main p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* Images */
+main img {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Video Popup */
+#videoContainer {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#videoPlayer {
+    width: 100%;
+    max-width: 600px;
+}
+
+* Contact Section */
+#contact {
+    background-color: white;
+    padding: 40px;
+    max-width: 500px;
+    margin: 40px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#contact h2 {
+    color: #004d00;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-size: 16px;
+    color: #333;
+    text-align: right;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* Submit Button */
+button {
+    background-color: #008000;
+    color: white;
+    font-size: 18px;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #006400;
+}
+
+
+#closeVideo {
+    margin-top: 10px;
+    background-color: red;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+/* Facilities Section */
+#facilities {
+    background-color: white;
+    padding: 40px;
+    max-width: 800px;
+    margin: 40px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#facilities h2 {
+    color: #004d00;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#facilities ul {
+    text-align: right;
+    list-style: none;
+    padding: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+#facilities ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Dropdown and Button */
+#serviceSelect {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+/* Image Gallery */
+#imageGallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin: 30px auto;
+    max-width: 900px;
+}
+
+#imageGallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+#imageGallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Dropdown and Button */
+#packageSelect {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #004d00;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav ul li {
+        display: block;
+        padding: 10px 0;
+    }
+
+    #videoPlayer {
+        width: 100%;
+    }
+}
+
