@@ -1,13 +1,25 @@
 
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الحزم - منتجع هول ان ون</title>
-    <link rel="stylesheet" href="css/css_style.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <!-- تحسين محركات البحث -->
+        <meta name="description"
+            content="منتجع هول ان ون - أفضل وجهة لعشاق الجولف والاستجمام. استمتع بأفضل الملاعب والخدمات الفاخرة في البرتغال.">
+        <meta name="keywords" content="جولف, منتجع, ملاعب جولف, سياحة, استجمام, فندق فاخر, ترفيه, رياضة">
+        <meta name="author" content="منتجع هول ان ون">
+    
+        <title>منتجع هول ان ون - أفضل تجربة جولف</title>
+        <link rel="stylesheet" href="css/css_style.css">
+    </head>
 <body>
+      <!-- Audio Element -->
+  <audio id="audioPlayer">
+    <source src="audios/504871389423110.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
     <header>
         <h1>منتجع هول ان ون</h1>
         <img class="log" src="images/log.jpg" alt="logo"  loading="lazy">
@@ -21,7 +33,31 @@
             </ul>
         </nav>
     </header>
+    <br>
 
+    <!-- Audio -->
+    <div style="float: left;">
+        <!-- Button to trigger audio pause -->
+       <a style="cursor: pointer; padding: 5px;" onclick="pauseAudio()" title=">وقف الصو">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-stop-circle-fill" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.5 5A1.5 1.5 0 0 0 5 6.5v3A1.5 1.5 0 0 0 6.5 11h3A1.5 1.5 0 0 0 11 9.5v-3A1.5 1.5 0 0 0 9.5 5z"/>
+          </svg>
+        </a>
+         <!-- Button to trigger audio play -->
+         <a style="cursor: pointer;padding: 5px;" onclick="playAudio()" title="تشغيل الصوت">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z"/>
+              </svg>
+            </a>
+    </div>
+
+    <!-- Font -->
+    <div style="float: right;">
+        <!-- زر تكبير الخط -->
+        <button class="increaseFontSize" >تكبير الخط</button>
+        <!-- زر تصغير الخط -->
+        <button class="dcreaseFontSize" >تصغير الخط</button>
+        </div>
     <section id="packages">
         <h2>الحزم المخصصة</h2>
         

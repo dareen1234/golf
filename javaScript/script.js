@@ -104,66 +104,81 @@ if (document.getElementById('serviceSelect')) {
         }
     });
 }
-document.getElementById('playVideo').addEventListener('click', function (event) {
-    event.preventDefault(); // منع الانتقال الفوري
-    document.getElementById('videoContainer').style.display = 'block'; // إظهار الفيديو
-    document.getElementById('videoPlayer').play(); // تشغيل الفيديو
-});
-
-document.getElementById('closeVideo').addEventListener('click', function () {
-    document.getElementById('videoContainer').style.display = 'none'; // إخفاء الفيديو
-    document.getElementById('videoPlayer').pause(); // إيقاف الفيديو
-    document.getElementById('videoPlayer').currentTime = 0; // إعادة الفيديو إلى البداية
-});
 
 // تحديد الزر
-const increaseFontSizeButton = document.getElementById("increaseFontSize");3
-const dcreaseFontSizeButton = document.getElementById("dcreaseFontSize");
+const increaseFontSizeButton = document.getElementsByClassName("increaseFontSize");
+const dcreaseFontSizeButton = document.getElementsByClassName("dcreaseFontSize");
 
 // تحديد حجم الخط الافتراضي
 let currentFontSize = 16; // الحجم الافتراضي للخط
 
 // إضافة حدث عند الضغط على الزر
-increaseFontSizeButton.addEventListener("click", function () {
+increaseFontSizeButton[0].addEventListener("click", function () {
     currentFontSize += 15; // زيادة حجم الخط بمقدار 2px عند كل نقر
-    // document.main.style.fontSize = "40px";
-    // document.a.style.fontSize = "40px";
-    // document.body.style.fontSize = "40px"; // تحديث حجم الخط
-    document.querySelector("main").style.fontSize = currentFontSize + "px";
-
-    // Change font size of <p> elements inside <main>
-    document.querySelectorAll("main p").forEach(el => {
-        el.style.fontSize = currentFontSize + "px";
-    });
 
     // Change font size of <a> elements inside <main>
     document.querySelectorAll("body a").forEach(el => {
+        el.style.fontSize = currentFontSize + "px";
+    });
+
+    document.querySelectorAll("body p").forEach(el => {
+        el.style.fontSize = currentFontSize + "px";
+    });
+
+    document.querySelectorAll("body label").forEach(el => {
+        el.style.fontSize = currentFontSize + "px";
+    });
+
+    document.querySelectorAll("body h2").forEach(el => {
+        el.style.fontSize = currentFontSize + "px";
+    });
+
+    document.querySelectorAll("body li").forEach(el => {
         el.style.fontSize = currentFontSize + "px";
     });
 });
 
 
 // إضافة حدث عند الضغط على الزر
-dcreaseFontSizeButton.addEventListener("click", function () {
+dcreaseFontSizeButton[0].addEventListener("click", function () {
 
     if(currentFontSize <= 16)
         return;
 
     currentFontSize -= 15; // زيادة حجم الخط بمقدار 2px عند كل نقر
 
-   
-    // document.main.style.fontSize = "40px";
-    // document.a.style.fontSize = "40px";
-    // document.body.style.fontSize = "40px"; // تحديث حجم الخط
-    document.querySelector("main").style.fontSize = currentFontSize + "px";
-
-    // Change font size of <p> elements inside <main>
-    document.querySelectorAll("main p").forEach(el => {
-        el.style.fontSize = currentFontSize + "px";
-    });
-
     // Change font size of <a> elements inside <main>
     document.querySelectorAll("body a").forEach(el => {
         el.style.fontSize = currentFontSize + "px";
     });
+
+    document.querySelectorAll("body p").forEach(el => {
+        el.style.fontSize = currentFontSize + "px";
+    });
+
+    document.querySelectorAll("body label").forEach(el => {
+        el.style.fontSize = currentFontSize + "px";
+    });
+    
+    document.querySelectorAll("body h2").forEach(el => {
+        el.style.fontSize = currentFontSize + "px";
+    });
+    
+    document.querySelectorAll("body li").forEach(el => {
+        el.style.fontSize = currentFontSize + "px";
+    });
 });
+
+ // Function to play the audio
+ function playAudio() {
+    var audio = document.getElementById('audioPlayer');
+    audio.play();
+  }
+
+  // Function to pause the audio
+  function pauseAudio() {
+    var audio = document.getElementById('audioPlayer');
+    audio.pause();
+  }
+
+ 

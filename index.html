@@ -1,64 +1,91 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-      <!-- تحسين محركات البحث -->
-      <meta name="description" content="منتجع هول ان ون - أفضل وجهة لعشاق الجولف والاستجمام. استمتع بأفضل الملاعب والخدمات الفاخرة في البرتغال.">
-      <meta name="keywords" content="جولف, منتجع, ملاعب جولف, سياحة, استجمام, فندق فاخر, ترفيه, رياضة">
-      <meta name="author" content="منتجع هول ان ون">
 
-      <title>منتجع هول ان ون - أفضل تجربة جولف</title>
+    <!-- تحسين محركات البحث -->
+    <meta name="description"
+        content="منتجع هول ان ون - أفضل وجهة لعشاق الجولف والاستجمام. استمتع بأفضل الملاعب والخدمات الفاخرة في البرتغال.">
+    <meta name="keywords" content="جولف, منتجع, ملاعب جولف, سياحة, استجمام, فندق فاخر, ترفيه, رياضة">
+    <meta name="author" content="منتجع هول ان ون">
+
+    <title>منتجع هول ان ون - أفضل تجربة جولف</title>
     <link rel="stylesheet" href="css/css_style.css">
 </head>
+
 <body>
+    <!-- Audio Element -->
+    <audio id="audioPlayer">
+        <source src="audios/504871389423110.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
     <header>
         <h1>منتجع هول ان ون</h1>
-        <img class="log" src="images/log.jpg" alt = "logo" loading="lazy">
+        <img class="log" src="images/log.jpg" alt="logo" loading="lazy">
         <nav>
             <ul>
                 <li><a href="index.html">الرئيسية</a></li>
                 <li><a href="صفحة المرافق و الخدمات.html">المرافق والخدمات</a></li>
                 <li><a href="صفحة الحزم.html">الحزم</a></li>
                 <li><a href="اتصل بنا.html">اتصل بنا</a></li>
-                
-                <li><a href="#" id="playVideo">شاهد الفيديو</a></li> <!-- رابط تشغيل الفيديو -->
+                <li><a href="#" class="playVideo">شاهد الفيديو</a></li> <!-- رابط تشغيل الفيديو -->
+
             </ul>
         </nav>
-     
-          
     </header>
     <br>
-    
-    <div style="float: right;">
- <!-- زر تكبير الخط -->
- <button id="increaseFontSize" >تكبير الخط</button>
- <!-- زر تصغير الخط -->
- <button id="dcreaseFontSize">تصغير الخط</button>
+
+    <!-- Audio -->
+    <div style="float: left;">
+        <!-- Button to trigger audio pause -->
+        <a style="cursor: pointer; padding: 5px;" onclick="pauseAudio()" title=">وقف الصو">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-stop-circle-fill" viewBox="0 0 16 16">
+                <path
+                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.5 5A1.5 1.5 0 0 0 5 6.5v3A1.5 1.5 0 0 0 6.5 11h3A1.5 1.5 0 0 0 11 9.5v-3A1.5 1.5 0 0 0 9.5 5z" />
+            </svg>
+        </a>
+        <!-- Button to trigger audio play -->
+        <a style="cursor: pointer;padding: 5px;" onclick="playAudio()" title="تشغيل الصوت">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                <path
+                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z" />
+            </svg>
+        </a>
     </div>
 
+    <!-- Font -->
+    <div style="float: right;">
+        <!-- زر تكبير الخط -->
+        <button class="increaseFontSize">تكبير الخط</button>
+        <!-- زر تصغير الخط -->
+        <button class="dcreaseFontSize">تصغير الخط</button>
+    </div>
 
     <main>
         <h2>مرحبًا بكم في منتجع هول ان ون</h2>
         <p>
-            من إدارة منتجع "هول إن ون" نرحب بكم في وجهتنا المميزة لعشاق الجولف والرفاهية في قلب البرتغال. نفخر بتقديم تجربة رياضية وترفيهية فريدة تتجسد في ثلاثة ملاعب للجولف ذات معايير عالمية، منها ملعب "سي فيو" الشهير، بالإضافة إلى ناديين راقين وفنادق توفر إقامة فاخرة. 
+            من إدارة منتجع "هول إن ون" نرحب بكم في وجهتنا المميزة لعشاق الجولف والرفاهية في قلب البرتغال. نفخر بتقديم
+            تجربة رياضية وترفيهية فريدة تتجسد في ثلاثة ملاعب للجولف ذات معايير عالمية، منها ملعب "سي فيو" الشهير،
+            بالإضافة إلى ناديين راقين وفنادق توفر إقامة فاخرة.
             <strong>استمتع بتجربة لا تُنسى تجمع بين رياضة الجولف والرفاهية الراقية.</strong>
         </p>
-        <img src="images/golf-83876_1280.jpg" alt="منتجع هول ان ون" 
-        style="width: 100%;" loading="lazy">
-        <img src="images/home_02.jpg" alt="تجربة الجولف" 
-        style="width: 100%; margin-top: 20px;" loading="lazy">
+        <img src="images/golf-83876_1280.jpg" alt="منتجع هول ان ون" style="width: 100%;" loading="lazy">
+        <img src="images/home_02.jpg" alt="تجربة الجولف" style="width: 100%; margin-top: 20px;" loading="lazy">
     </main>
 
-    <div id="videoContainer" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;">
+    <div id="videoContainer"
+        style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;">
         <video id="videoPlayer" width="600" controls>
             <source src="videos/45301-442657794_small.mp4" type="video/mp4">
             <track kind="subtitles" src="subtitles.vtt" srclang="ar" label="العربية">
             متصفحك لا يدعم تشغيل الفيديو.
         </video>
-        <button id="closeVideo">إغلاق</button>
+        <button class="closeVideo">إغلاق</button>
     </div>
 
     <footer>
@@ -66,5 +93,23 @@
     </footer>
 
     <script src="javaScript/script.js"></script>
+    <script>
+        const playVideoButton = document.getElementsByClassName("playVideo");
+        const closeVideoButton = document.getElementsByClassName("closeVideo");
+
+        playVideoButton[0].addEventListener('click', function (event) {
+            event.preventDefault(); // منع الانتقال الفوري
+            document.getElementById('videoContainer').style.display = 'block'; // إظهار الفيديو
+            document.getElementById('videoPlayer').play(); // تشغيل الفيديو
+        });
+
+        closeVideoButton[0].addEventListener('click', function () {
+            document.getElementById('videoContainer').style.display = 'none'; // إخفاء الفيديو
+            document.getElementById('videoPlayer').pause(); // إيقاف الفيديو
+            document.getElementById('videoPlayer').currentTime = 0; // إعادة الفيديو إلى البداية
+        });
+
+    </script>
 </body>
+
 </html>
