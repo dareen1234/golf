@@ -392,5 +392,33 @@ footer {
     #videoPlayer {
         width: 100%;
     }
+
+    #cart {
+        background-color: white;
+        padding: 40px;
+        max-width: 800px;
+        margin: 40px auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    #cart h2 {
+        color: #004d00;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    #cart ul {
+        text-align: right;
+        list-style: none;
+        padding: 0;
+        font-size: 18px;
+        color: #333;
+    }
+    
+    #cart ul li {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
 }
 

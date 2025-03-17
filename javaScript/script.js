@@ -1,3 +1,9 @@
+
+(function () {
+    document.getElementsByClassName("cartCount")[0].innerText = Object.keys(localStorage).length;
+})();
+
+
 // وظيفة للاشتراك في النشرة الإخبارية
 document.querySelectorAll('.button').forEach(button => {
     button.addEventListener('click', function (event) {
@@ -37,6 +43,7 @@ if (document.getElementById('contactForm')) {
 
 // وظيفة لعرض تفاصيل الحزمة المختارة
 document.getElementById('packageSelect')?.addEventListener('change', function () {
+    debugger;
     const selectedPackage = this.value;
     const packageDetails = document.getElementById('packageDetails');
     const bookButton = document.getElementById('bookButton');
@@ -89,7 +96,22 @@ document.getElementById('packageSelect')?.addEventListener('change', function ()
             bookButton.style.display = 'none'; // إخفاء زر الحجز
     }
 
-    packageDetails.innerHTML = details; // عرض التفاصيل
+    //packageDetails.innerHTML = details; // عرض التفاصيل
+});
+
+document.getElementById('bookButton')?.addEventListener('click', function () {
+    debugger
+    const packageSelect = document.getElementById('packageSelect');
+    const value = packageSelect.value;
+    const text = packageSelect.options[packageSelect.selectedIndex].text;
+
+    if (text && value) {
+        localStorage.setItem(value, text);
+        document.getElementsByClassName("cartCount")[0].innerText = Object.keys(localStorage).length;
+    } else {
+        alert("يرجى اختيار حزمة للحجز.");
+    }
+
 });
 
 // وظيفة للاشتراك في الخدمة المختارة

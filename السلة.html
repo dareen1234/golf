@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/css_style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -23,10 +24,10 @@
         <source src="audios/504871389423110.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
+
     <header>
         <h1>منتجع هول ان ون</h1>
         <img class="log" src="images/log.jpg" alt="logo" loading="lazy">
-
         <nav>
             <ul>
                 <li><a href="index.html">الرئيسية</a></li>
@@ -48,6 +49,7 @@
             </ul>
         </nav>
     </header>
+
     <br>
 
     <!-- Audio -->
@@ -78,50 +80,98 @@
         <button class="dcreaseFontSize">تصغير الخط</button>
     </div>
 
-    <section id="facilities">
-        <h2>المرافق والخدمات</h2>
-        <ul>
-            <li>ثلاثة ملاعب لبطولات الجولف بما في ذلك ملعب "سي فيو".</li>
-            <li>ناديان.</li>
-            <li>الإقامة في الفنادق.</li>
-            <li>المطاعم والمقاهي.</li>
-            <li>متجر للمحترفين.</li>
-            <li>أنشطة أخرى: ساحة تدريب مضاءة، دروس الجولف، تدريب رقمي، خدمة المساعدة على حمل أدوات الجولف.</li>
-        </ul>
+    
+    <br><br><br>
+    <div class="container">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">الحزمة</th>
+                    <th scope="col">#</th>
+                </tr>
+            </thead>
+            <tbody id="cart">
+            </tbody>
+        </table>
+    </div>
+    <br><br><br>
 
-        <label for="serviceSelect">اختر الخدمة للاشتراك:</label>
-        <select id="serviceSelect">
-            <option value="">-- اختر خدمة --</option>
-            <option value="golfCourses">ملاعب الجولف</option>
-            <option value="clubs">الأندية</option>
-            <option value="hotelStay">الإقامة في الفنادق</option>
-            <option value="restaurants">المطاعم والمقاهي</option>
-            <option value="proShop">متجر المحترفين</option>
-            <option value="trainingField">ساحة التدريب</option>
-            <option value="golfLessons">دروس الجولف</option>
-            <option value="digitalTraining">التدريب الرقمي</option>
-            <option value="golfAssistance">خدمة المساعدة على حمل أدوات الجولف</option>
-        </select>
-
-        <button id="subscribeServiceButton" class="button" style="margin-top: 10px;">اشترك في الخدمة</button>
-        <p style="margin-top: 10px;">ساعات العمل: 9:00 صباحًا - 9:00 مساءً</p>
-
-        <!-- قسم الصور -->
-        <div class="gallery">
-            <img src="images/golf club.jpg" alt="صورة 1" loading="lazy">
-            <img src="images/shop.jpg" alt="صورة 2" loading="lazy">
-            <img src="images/resturant.jpg" alt="صورة 3" loading="lazy">
-            <img src="images/receptionists-5975962_1280.jpg" alt="صورة 4" loading="lazy">
-            <img src="images/hotel-1979406_1280.jpg" alt="صورة 5" loading="lazy">
-            <img src="images/shop2.jpg" alt="صورة 10" loading="lazy">
-        </div>
-    </section>
+    <div id="videoContainer"
+        style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;">
+        <video id="videoPlayer" width="600" controls>
+            <source src="videos/45301-442657794_small.mp4" type="video/mp4">
+            <track kind="subtitles" src="subtitles.vtt" srclang="ar" label="العربية">
+            متصفحك لا يدعم تشغيل الفيديو.
+        </video>
+        <button class="closeVideo">إغلاق</button>
+    </div>
 
     <footer>
-        <p>جميع الحقوق محفوظة © 2025 منتجع هول ان ون</p>
+        <p>&copy; 2025 منتجع هول ان ون. جميع الحقوق محفوظة.</p>
     </footer>
 
     <script src="javaScript/script.js"></script>
+
+    <script>
+        (function () {
+            loadStorageData();
+        })();
+
+        function loadStorageData() {
+            document.getElementById('cart').innerHTML = "";
+            let tableBody = document.getElementById("cart");
+
+            for (let i = 0; i < localStorage.length; i++) {
+                debugger
+                let key = localStorage.key(i);
+                let value = localStorage.getItem(key);
+
+                let row = document.createElement("tr");
+
+                let nameCell = document.createElement("td");
+                nameCell.textContent = value;
+
+                let deleteButton = document.createElement("button");
+                deleteButton.textContent = `حذف`;
+                deleteButton.className = "btn btn-sm text-white m-1";
+                deleteButton.style = "background-color: red;";
+                deleteButton.onclick = function () {
+                    DeleteItem(key);
+                };
+
+                row.appendChild(nameCell);
+                row.appendChild(deleteButton);
+
+                tableBody.appendChild(row);
+            }
+        }
+
+        function DeleteItem(key) {
+            if (key) {
+                localStorage.removeItem(key);
+                document.getElementsByClassName("cartCount")[0].innerText = Object.keys(localStorage).length;
+                loadStorageData();
+            } else {
+                alert("Please select an item to delete.");
+            }
+        }
+
+        const playVideoButton = document.getElementsByClassName("playVideo");
+        const closeVideoButton = document.getElementsByClassName("closeVideo");
+
+        playVideoButton[0].addEventListener('click', function (event) {
+            event.preventDefault(); // منع الانتقال الفوري
+            document.getElementById('videoContainer').style.display = 'block'; // إظهار الفيديو
+            document.getElementById('videoPlayer').play(); // تشغيل الفيديو
+        });
+
+        closeVideoButton[0].addEventListener('click', function () {
+            document.getElementById('videoContainer').style.display = 'none'; // إخفاء الفيديو
+            document.getElementById('videoPlayer').pause(); // إيقاف الفيديو
+            document.getElementById('videoPlayer').currentTime = 0; // إعادة الفيديو إلى البداية
+        });
+
+    </script>
 </body>
 
 </html>
